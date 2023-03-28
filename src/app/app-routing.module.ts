@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "search", component: SearchComponent, children: [
     {path: ":id", component: SinglePokemonComponent },
-  ] },
+  ]},
   {path: "404", component: NotFoundComponent},
   {path: "**", redirectTo: "/404"}
 ];

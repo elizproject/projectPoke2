@@ -1,4 +1,4 @@
-<!--Immagine-->
+<!--Immagine pokedex-->
 <div class="flex flex-col justify-center items-center mt-1">
     <img src="https://upload.wikimedia.org/wikipedia/it/8/83/Pok%C3%A9dex_3D.png" class="w-1/4">
   </div>
@@ -17,9 +17,15 @@
 </div>
 
 <!--Metto le immagini-->
-<div class="flex justify-center mt-8">
-    
+<div class="flex justify-center mt-8" *ngIf="pokemonData.length > 0">
+  <div *ngFor="let pokemon of pokemonData" class="mx-4">
+    <a routerLink="/search">
+    <div class="border-2 border-gray-400 rounded-md shadow-lg p-4 bg-white">
+      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="w-32 h-32 mx-auto mb-2">
+      <div class="text-center">{{ pokemon.name }}</div>
+    </div>
+  </a>
   </div>
-<router-outlet></router-outlet>
+</div>
 
 

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { DirectiveComponent } from './components/directive/directive.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { PokemonFoundComponent } from './components/pokemon-found/pokemon-found.component';
@@ -16,7 +16,6 @@ import { SinglePokemonComponent } from './components/single-pokemon/single-pokem
   declarations: [
     AppComponent,
     HeaderComponent,
-    DirectiveComponent,
     NotFoundComponent,
     HomeComponent,
     PokemonFoundComponent,
@@ -26,7 +25,8 @@ import { SinglePokemonComponent } from './components/single-pokemon/single-pokem
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
