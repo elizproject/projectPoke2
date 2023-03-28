@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     this.http.get<any>('https://pokeapi.co/api/v2/pokemon')
       .subscribe((data) => {
         // Seleziona tre nomi a caso
+        console.log(data);
         const allPokemonNames = data.results.map((result: any) => result.name);
         const randomNames = this.pickRandom(allPokemonNames, 3);
   
