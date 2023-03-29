@@ -10,8 +10,12 @@ export class PokeapiService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemon(id: number): Observable<any> {
+  getPokemonById(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/pokemon/${id}`);
+  }
+
+  getPokemonByName(name: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/pokemon/${name}`);
   }
   
 }

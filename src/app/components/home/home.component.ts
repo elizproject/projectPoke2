@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     }
   
     pokemonIds.forEach(id => {
-      this.servizioProva.getPokemon(id).subscribe((data) => {
+      this.servizioProva.getPokemonById(id).subscribe((data) => {
         this.pokemonData.push(data);
       });
     });
