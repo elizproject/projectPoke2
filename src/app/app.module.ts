@@ -11,6 +11,7 @@ import { PokemonFoundComponent } from './components/pokemon-found/pokemon-found.
 import { TailwindTestComponent } from './tailwind-test/tailwind-test.component';
 import { SearchComponent } from './components/search/search.component';
 import { SinglePokemonComponent } from './components/single-pokemon/single-pokemon.component';
+import { WasteCodesComponent } from './waste-codes/waste-codes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SinglePokemonComponent } from './components/single-pokemon/single-pokem
     PokemonFoundComponent,
     TailwindTestComponent,
     SearchComponent,
-    SinglePokemonComponent
+    SinglePokemonComponent,
+    WasteCodesComponent
   ],
   imports: [
     BrowserModule,

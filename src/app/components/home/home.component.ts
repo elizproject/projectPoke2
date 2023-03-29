@@ -14,24 +14,21 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient, private servizioProva: PokeapiService) { }
 
   ngOnInit(): void {
-    // Recupera tutti i nomi dei Pokémon dall'API
-    this.http.get<any>('https://pokeapi.co/api/v2/pokemon')
-      .subscribe((data) => {
-        // Seleziona tre nomi a caso
-        console.log(data);
-        const allPokemonNames = data.results.map((result: any) => result.name);
-        const randomNames = this.servizioProva.pickRandom(allPokemonNames, 3);
+    const pokemonIds: number[] = [];
+    while (pokemonIds.length < 3) {
+      const id = Math.floor(Math.random() * 898) + 1;
+      if (!pokemonIds.includes(id)) {
+        pokemonIds.push(id);
+      }
+    }
   
-        // Recupera i dati dei tre Pokémon selezionati
-        randomNames.forEach(name => {
-          this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${name}`)
-            .subscribe((data) => {
-              // Aggiungi i dati del Pokémon nell'array this.pokemonData
-              this.pokemonData.push(data);
-            });
-        });
+    pokemonIds.forEach(id => {
+      this.servizioProva.getPokemon(id).subscribe((data) => {
+        this.pokemonData.push(data);
       });
+    });
   }
+
 
 
 }
