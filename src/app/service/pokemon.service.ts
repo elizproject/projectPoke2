@@ -13,4 +13,6 @@ export class PokeapiService {
   getPokemon(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/pokemon/${id}`);
   }
+
+  
 }
