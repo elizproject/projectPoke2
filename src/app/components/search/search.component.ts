@@ -11,7 +11,13 @@ export class SearchComponent implements OnInit {
   pokemonName= "";
   searchError = false;
   pokemonImageUrl= "";
-  pokemonStats: any[] = [];
+  pokemonStats: any = {
+    speed: 0,
+    special_defense: 0,
+    special_attack: 0,
+    attack: 0,
+    hp: 0
+  };
 
   constructor(private servizioProva: PokeapiService){};
   
@@ -20,19 +26,23 @@ export class SearchComponent implements OnInit {
   }
 
   searchPokemon() {
+    // Reset delle variabili
+    this.pokemonImageUrl = "assets/pokeball.png";
+    this.pokemonStats = null;
+    
     this.servizioProva.getPokemonByName(this.pokemonName).subscribe({
       next: data => {
         console.log(data);
         this.searchError = false;
         this.pokemonStats = {
-          name: data.name,
-          speed: data.stats[0].base_stat,
-          specialDefense: data.stats[1].base_stat,
-          specialAttack: data.stats[2].base_stat,
-          attack: data.stats[4].base_stat,
-          hp: data.stats[5].base_stat
+          speed: this.getStatByName(data, 'speed'),
+          special_defense: this.getStatByName(data, 'special-defense'),
+          special_attack: this.getStatByName(data, 'special-attack'),
+          attack: this.getStatByName(data, 'attack'),
+          hp: this.getStatByName(data, 'hp')
         };
-        this.pokemonImageUrl = data.sprites.front_default;
+        this.pokemonName = data.name;
+        this.pokemonImageUrl = data.sprites.front_default || "assets/pokeball.png";
       },
       error: error => {
         console.log(error);
@@ -41,10 +51,9 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  private getStatValue(stats: any[], statName: string): string {
-    const stat = stats.find(s => s.stat.name === statName);
-    return stat ? stat.base_stat : "none";
+  private getStatByName(pokemonData: any, statName: string): number {
+    const stat = pokemonData.stats.find((stat: any) => stat.stat.name === statName);
+    return stat.base_stat;
   }
 }
-
 

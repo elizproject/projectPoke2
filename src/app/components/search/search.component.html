@@ -19,79 +19,78 @@
 
 
   <div class="min-h-screen flex items-start">
-    <!-- Metà sinistra -->
     <div class="w-1/2 flex items-center justify-center">
         <!-- Inserisci il contenuto della metà sinistra qui -->
         <div class="pl-10 md:pl-10 items-center justify-center w-80 h-80 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl mt-8">
-            <div class="sm:w-8/12 p-5">
-                <div class="space-y-2">
-                    <div class="flex items-center space-x-4 justify-between">
-                        <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row"></div>
-                    </div>
-                    <div class="flex items-center space-x-4 justify-between">
-                        <div class="flex flex-row space-x-1"></div>
-                    </div>
-                </div>
-                <img [src]="pokemonImageUrl" alt="Immagine" class="mt-4">
+          <div class="sm:w-8/12 p-5">
+            <div class="space-y-2">
+              <div class="flex items-center space-x-4 justify-between">
+                <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row"></div>
+              </div>
+              <div class="flex items-center space-x-4 justify-between">
+                <div class="flex flex-row space-x-1"></div>
+              </div>
             </div>
+            <img [src]="pokemonImageUrl || 'assets/pokeball.png'" alt="Immagine" class="mt-4 w-auto h-auto flex justify-center">
+          </div>
         </div>
-    </div>
+      </div>
+      
 
     <!-- Metà destra -->
-    <div class="w-1/2 flex items-center justify-center">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <!-- Inserisci il contenuto della metà destra qui -->
-            <div class="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
-                <div class="p-4 border-b">
-                    <h2 class="text-2xl ">
-                        {{ pokemonName }}
-                    </h2>
-                </div>
-                <div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">
-                            Speed
-                        </p>
-                        <p>
-                            {{ pokemonStats.speed }}
-                        </p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">
-                            Speed defense
-                        </p>
-                        <p>
-                            {{ pokemonStats.special_defense }}
-                        </p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">
-                            Special Attack
-                        </p>
-                        <p>
-                            {{ pokemonStats.special_attack }}
-                        </p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">
-                            Attack
-                        </p>
-                        <p>
-                            {{ pokemonStats.attack }}
-                        </p>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-                        <p class="text-gray-600">
-                            Hp
-                        </p>
-                        <p>
-                            {{ pokemonStats.hp }}
-                        </p>
-                    </div>
-                </div>
-            </div>
+<div class="w-1/2 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <div class="max-w-4xl bg-white w-full rounded-lg shadow-xl">
+        <div class="p-4 border-b">
+          <h2 class="text-2xl font-bold">
+            {{ pokemonName }}
+          </h2>
         </div>
+        <div>
+          <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium pr-4">
+              Speed
+            </p>
+            <p class="font-bold">
+              {{ pokemonStats.speed }}
+            </p>
+          </div>
+          <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium pr-4">
+              Speed defense
+            </p>
+            <p class="font-bold">
+              {{ pokemonStats.special_defense }}
+            </p>
+          </div>
+          <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium pr-4">
+              Special Attack
+            </p>
+            <p class="font-bold">
+              {{ pokemonStats.special_attack }}
+            </p>
+          </div>
+          <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium pr-4">
+              Attack
+            </p>
+            <p class="font-bold">
+              {{ pokemonStats.attack }}
+            </p>
+          </div>
+          <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p class="text-gray-600 font-medium pr-4">
+              Hp
+            </p>
+            <p class="font-bold">
+              {{ pokemonStats.hp }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
     
 
