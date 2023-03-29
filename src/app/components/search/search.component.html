@@ -1,37 +1,95 @@
 <!--componenre di ricerca-->
 <!--Ho importato questo componente da tailwind component-->
-<div class="flex justify-center items-center mt-8">
-    <div class="relative mx-auto text-white flex">
-      <input class="border-2 border-gray-300 bg-red-500 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-        type="text" name="search" placeholder="Nome">
-      <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-red-700 rounded-lg border border-white hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-white dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-      </button>
+    <div class="flex justify-center items-center mt-8">
+        <div class="relative mx-auto text-white flex">
+        <input class="border-2 border-gray-300 bg-red-500 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+            type="text" name="search" placeholder="Nome">
+        <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-red-700 rounded-lg border border-white hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-white dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </button>
+        </div>
     </div>
-  </div>
 
-  <!-- componente card -->
-	<div class="p-4 items-center justify-center w-[680px] rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl">
-		<div class="sm:w-8/12 pl-0 p-5">
-			<div class="space-y-2">
-				
-				<div class="flex items-center space-x-4 justify-between">
-					
-					<div class=" px-3 py-1 rounded-lg flex space-x-2 flex-row">
-						
-						
-					</div>
-				</div>
-				<div class="flex items-center space-x-4 justify-between">
-					
-					<div class="flex flex-row space-x-1">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-  
-  
+
+    <div class="min-h-screen flex items-start">
+        <!-- Metà sinistra -->
+        <div class="w-1/2 flex items-center justify-center">
+          <!-- <div class="bg-white p-6 rounded-lg shadow-lg"> -->
+            <!-- Inserisci il contenuto della metà sinistra qui -->
+            <div class="pl-10 md:pl-10 items-center justify-center w-80 h-80 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl mt-8">
+                <div class="sm:w-8/12 p-5">
+                  <div class="space-y-2">
+                    <div class="flex items-center space-x-4 justify-between">  
+                      <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row"></div>
+                    </div>
+                    <div class="flex items-center space-x-4 justify-between">
+                      <div class="flex flex-row space-x-1"></div>
+                    </div>
+                  </div>
+                  <img src="../assets/pokeball.png" alt="Immagine" class="mt-4">
+                </div>
+              </div>
+          <!-- </div> -->
+        </div>
+        
+        <!-- Metà destra -->
+        <div class="w-1/2 flex items-center justify-center">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <!-- Inserisci il contenuto della metà destra qui -->
+            <div class="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
+                <div class="p-4 border-b">
+                    <h2 class="text-2xl ">
+                        Pokemon Information
+                    </h2>
+                </div>
+                <div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Speed
+                        </p>
+                        <p>
+                            Jane Doe
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Speed defense
+                        </p>
+                        <p>
+                            Product Manager
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Special Attack
+                        </p>
+                        <p>
+                            Janedoe@gmail.com
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Attack
+                        </p>
+                        <p>
+                            $ 12000
+                        </p>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                        <p class="text-gray-600">
+                            Hp
+                        </p>
+                        <p>
+                            Questo
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+ 
