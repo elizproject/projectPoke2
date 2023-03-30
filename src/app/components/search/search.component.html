@@ -14,15 +14,17 @@
     </div>
   </div>
   
-  <div *ngIf="searchError" class="text-red-600 mt-2 text-center">Controlla come hai scritto il pokemon, imbecille.</div>
+  <div *ngIf="searchError" class="text-red-600 mt-2 text-center">
+    Controlla come hai scritto il pokemon, imbecille.
+  </div>
   
 
 
-  <div class="min-h-screen flex items-start">
+  <div class="min-h-screen/2 flex items-start">
     <div class="w-1/2 flex items-center justify-center">
         <!-- Inserisci il contenuto della metà sinistra qui -->
         <div class="pl-10 md:pl-10 items-center justify-center w-80 h-80 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl mt-8">
-          <div class="sm:w-8/12 p-5">
+          <div class="sm:w-8/12 p-5 text-center">
             <div class="space-y-2">
               <div class="flex items-center space-x-4 justify-between">
                 <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row"></div>
@@ -31,7 +33,7 @@
                 <div class="flex flex-row space-x-1"></div>
               </div>
             </div>
-            <img [src]="pokemonImageUrl || 'assets/pokeball.png'" alt="Immagine" class="mt-4 w-auto h-auto flex justify-center">
+            <img [src]="pokemonImageUrl || 'assets/pokeball.png'" alt="Immagine" class="w-auto h-auto">
           </div>
         </div>
       </div>
@@ -42,7 +44,7 @@
     <div class="bg-white p-6 rounded-lg shadow-lg">
       <div class="max-w-4xl bg-white w-full rounded-lg shadow-xl">
         <div class="p-4 border-b">
-          <h2 class="text-2xl font-bold">
+          <h2 class="text-2xl font-bold capitalize">
             {{ pokemonName }}
           </h2>
         </div>
@@ -92,6 +94,12 @@
     </div>
   </div>
 </div>
-    
+ 
+<!--Bottone torna home-->
+<div class="text-center mt-8">
+  <button routerLink="/home" class="bg-red-500 border border-black rounded-md text-white py-2 px-4">
+    Torna alla Home
+  </button>
+</div>
 
  

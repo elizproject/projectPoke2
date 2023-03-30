@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
     this.pokemonImageUrl = "assets/pokeball.png";
     this.pokemonStats = null;
     
-    this.servizioProva.getPokemonByName(this.pokemonName).subscribe({
+    this.servizioProva.getPokemonByName(this.pokemonName.trim().toLowerCase()).subscribe({
       next: data => {
         console.log(data);
         this.searchError = false;
