@@ -8,10 +8,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
-import { PokemonFoundComponent } from './components/pokemon-found/pokemon-found.component';
 import { TailwindTestComponent } from './tailwind-test/tailwind-test.component';
 import { SearchComponent } from './components/search/search.component';
-import { SinglePokemonComponent } from './components/single-pokemon/single-pokemon.component';
 import { WasteCodesComponent } from './waste-codes/waste-codes.component';
 
 @NgModule({
@@ -20,10 +18,8 @@ import { WasteCodesComponent } from './waste-codes/waste-codes.component';
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
-    PokemonFoundComponent,
     TailwindTestComponent,
     SearchComponent,
-    SinglePokemonComponent,
     WasteCodesComponent
   ],
   imports: [
