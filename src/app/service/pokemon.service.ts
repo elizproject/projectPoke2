@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class PokeapiService {
   private url= 'https://pokeapi.co/api/v2';
 
+  pokeNameService= "";
+
   constructor(private http: HttpClient) { }
 
   getPokemonById(id: number): Observable<any> {
@@ -22,4 +24,6 @@ export class PokeapiService {
   getPokemonInfo(nameOrId: string): Observable<any> {
     return this.http.get<any>(`${this.url}/pokemon/${nameOrId}`);
   }
+
+
 }
