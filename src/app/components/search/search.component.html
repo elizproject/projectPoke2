@@ -22,22 +22,28 @@
 
   <div class="min-h-screen/2 flex items-start">
     <div class="w-1/2 flex items-center justify-center">
-        <!-- Inserisci il contenuto della metà sinistra qui -->
-        <div class="pl-10 md:pl-10 items-center justify-center w-80 h-80 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 hover:rounded-2xl mt-8">
-          <div class="sm:w-8/12 p-5 text-center">
-            <div class="space-y-2">
-              <div class="flex items-center space-x-4 justify-between">
-                <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row"></div>
-              </div>
-              <div class="flex items-center space-x-4 justify-between">
-                <div class="flex flex-row space-x-1"></div>
-              </div>
+      <!-- Inserisci il contenuto della metà sinistra qui -->
+      <div class="items-center justify-center w-80 h-80 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 hover:rounded-2xl mt-8">
+        <div class="sm:w-8/12 p-5 text-center">
+          <div class="space-y-2">
+            <div class="flex items-center space-x-4 justify-between">
+              <div class="px-3 py-1 rounded-lg flex space-x-2 flex-row"></div>
             </div>
-            <img [src]="pokemonImageUrl || 'assets/pokeball.png'" alt="Immagine" 
-              class="w-auto h-auto mr-2" [ngClass]="{'animate-spin': pokemonImageUrl === 'assets/pokeball.png'}">
+            <div class="flex items-center space-x-4 justify-between">
+              <div class="flex flex-row space-x-1"></div>
+            </div>
           </div>
+          <img [src]="pokemonImageUrl || 'assets/pokeball.png'" alt="Immagine" 
+               [ngClass]="{'animate-spin': !pokemonFound && pokemonImageUrl === 'assets/pokeball.png', 'object-cover': pokemonFound, 'w-full h-full': true }">
         </div>
       </div>
+    </div>
+  
+  
+  
+  
+
+
       
 
     <!-- Metà destra -->
