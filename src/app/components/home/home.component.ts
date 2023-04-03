@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PokeapiService } from 'src/app/service/pokemon.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   pokemonData: any[] = [];
 
-  constructor(private http: HttpClient, private servizioProva: PokeapiService) { }
+  constructor(private http: HttpClient, private servizioProva: PokeapiService, private router: Router) { }
 
   ngOnInit(): void {
     const pokemonIds: number[] = [];
@@ -29,6 +30,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
+  goToSearch(pokemonName: string): void {
+    this.router.navigate(['/search'], { queryParams: { name: pokemonName } });
+  }
 
 }

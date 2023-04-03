@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeapiService } from 'src/app/service/pokemon.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -19,18 +20,20 @@ export class SearchComponent implements OnInit {
     hp: 0
   };
 
-  constructor(private servizioProva: PokeapiService){};
+  constructor(private route: ActivatedRoute, private servizioProva: PokeapiService){};
   
   ngOnInit(): void {
-    console.log("OnInIt del search");
+    this.route.queryParams.subscribe(params => {
+      this.pokemonName = params['name'];
+    });
   }
 
-  searchPokemon() {
+  searchPokemon(name: string) {
     // Reset delle variabili
     this.pokemonImageUrl = "assets/pokeball.png";
     this.pokemonStats = null;
     
-    this.servizioProva.getPokemonByName(this.pokemonName.trim().toLowerCase()).subscribe({
+    this.servizioProva.getPokemonByName(name.trim().toLowerCase()).subscribe({
       next: data => {
         console.log(data);
         this.searchError = false;
@@ -47,6 +50,14 @@ export class SearchComponent implements OnInit {
       error: error => {
         console.log(error);
         this.searchError = true;
+        this.pokemonImageUrl = "assets/pokeball.png";
+        this.pokemonStats = {
+          speed: 0,
+          special_defense: 0,
+          special_attack: 0,
+          attack: 0,
+          hp: 0
+        };
       }
     });
   }

@@ -5,8 +5,8 @@
 
   <!--Testo a piacimento-->
   <h1 class="ext-4xl text-black font-bold flex flex-col justify-center items-center mt-1">
-    Questo pokedex contiene pokemon di vario genere, ovviamente non li tiene tutti, starà a te
-    sviluppatore aggiornarlo
+    Questo pokedex contiene pokemon di vario genere, per avviare la ricerca, basta cliccare sul tasto sottostante che ti porterà
+    in una pagina dove potrai cercare ogni pokemon che vorrai
   </h1>
 
   <!--Bottone-->
@@ -19,7 +19,7 @@
 <!--Metto le 3 immagini-->
 <div class="flex justify-center mt-8" *ngIf="pokemonData.length > 0">
   <div *ngFor="let pokemon of pokemonData" class="mx-4">
-    <a routerLink="/search">
+    <a [routerLink]="['/search']" [queryParams]="{ name: pokemon.name }">
     <div class="border-2 border-gray-400 rounded-md shadow-lg p-4 bg-white">
       <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name" class="w-32 h-32 mx-auto mb-2">
       <div class="text-center">{{ pokemon.name }}</div>
