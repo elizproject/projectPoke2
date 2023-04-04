@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   pokemonData: any[] = [];
 
-  constructor(private http: HttpClient, private servizioProva: PokeapiService, private router: Router) { }
+  constructor(private http: HttpClient, private pokeapiService: PokeapiService, private router: Router) { }
 
   ngOnInit(): void {
     const pokemonIds: number[] = [];
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     }
   
     pokemonIds.forEach(id => {
-      this.servizioProva.getPokemonById(id).subscribe((data) => {
+      this.pokeapiService.getPokemonById(id).subscribe((data) => {
         this.pokemonData.push(data);
       });
     });
@@ -34,5 +34,5 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/search'], { queryParams: { name: pokemon.name } , state: { pokemon } });
   }
   
-
 }
+

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -9,9 +9,14 @@ import { Observable } from 'rxjs';
 export class PokeapiService {
   private url= 'https://pokeapi.co/api/v2';
 
-  pokeNameService= "";
+  private pokemonNameSource = new BehaviorSubject<string>("");
+  currentPokemonName = this.pokemonNameSource.asObservable();
 
   constructor(private http: HttpClient) { }
+
+  changePokemonName(name: string) {
+    this.pokemonNameSource.next(name)
+  }
 
   getPokemonById(id: number): Observable<any> {
     return this.http.get<any>(`${this.url}/pokemon/${id}`);
@@ -25,5 +30,5 @@ export class PokeapiService {
     return this.http.get<any>(`${this.url}/pokemon/${nameOrId}`);
   }
 
-
 }
+

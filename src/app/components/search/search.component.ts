@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   };
   pokemonFound = false;
 
-  constructor(private route: ActivatedRoute, private servizioProva: PokeapiService){};
+  constructor(private route: ActivatedRoute, private pokeapiService: PokeapiService){};
   
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
     // Reset delle variabili
     this.resetSearch();
     
-    this.servizioProva.getPokemonByName(name.trim().toLowerCase()).subscribe({
+    this.pokeapiService.getPokemonByName(name.trim().toLowerCase()).subscribe({
       next: data => {
         console.log(data);
         this.searchError = false;
