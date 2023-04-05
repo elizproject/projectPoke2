@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToSearch(pokemon: any): void {
-    this.router.navigate(['/search'], { queryParams: { name: pokemon.name } , state: { pokemon } });
+    this.router.navigate(['/search'] /*, {queryParams: { name: pokemon.name } , state: { pokemon } }*/);
   }
   
 }
